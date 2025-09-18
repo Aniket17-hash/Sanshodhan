@@ -62,7 +62,7 @@ Add PNG/JPG files to `assets/` and the images will render here. You can rename i
 </p>
 
 <p align="center">
-  <img src="assets/screenshot-explore.png" alt="Explore Page" width="800" />
+  <img src="assets/Screenshot-explore.png" alt="Explore Page" width="800" />
 </p>
 
 ## Getting Started
