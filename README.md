@@ -58,7 +58,7 @@ Add PNG/JPG files to `assets/` and the images will render here. You can rename i
 </p>
 
 <p align="center">
-  <img src="assets/screenshot-trip.png" alt="Capture Trip Page" width="800" />
+  <img src="assets/Screenshot-trip.png" alt="Capture Trip Page" width="800" />
 </p>
 
 <p align="center">
