@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanshodhan – Capture Trip</title>
+    <meta name="description" content="Demo trip capture form with animated UI and basic auto-detect hints.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="Logo.jpg">
+  </head>
+  <body data-page="trip">
+    <div class="page-transition" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="Logo.jpg" alt="NATPAC" class="brand-icon">
+        <span class="brand-name">Sanshodhan</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trip.html" class="nav-link active">Capture Trip</a>
+        <a href="explore.html" class="nav-link">Explore</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <main>
+      <section class="page-header container">
+        <h1 class="animate-up">Capture a Trip</h1>
+        <p class="lead animate-up delay-1">Fill in the trip details. Time is auto-set, and we can nudge for origin/destination. This is a frontend-only demo with local storage.</p>
+      </section>
+
+      <section class="container">
+        <form class="card glass form-grid" id="tripForm" autocomplete="off">
+          <div class="form-row">
+            <label for="tripNumber">Trip number</label>
+            <input id="tripNumber" name="tripNumber" type="number" min="1" placeholder="1" required>
+          </div>
+
+          <div class="form-row">
+            <label for="origin">Origin</label>
+            <input id="origin" name="origin" type="text" placeholder="e.g., Home, Kochi" required>
+            <div class="hint">Tip: Use current location <button type="button" class="link" id="useCurrentOrigin">Auto-fill</button></div>
+          </div>
+
+          <div class="form-row">
+            <label for="startTime">Start time</label>
+            <input id="startTime" name="startTime" type="datetime-local" required>
+          </div>
+
+          <div class="form-row">
+            <label for="mode">Mode</label>
+            <div class="chip-group" role="group" aria-label="Mode">
+              <input type="radio" id="modeWalk" name="mode" value="Walk" required>
+              <label for="modeWalk" class="chip">🚶 Walk</label>
+              <input type="radio" id="modeCycle" name="mode" value="Cycle">
+              <label for="modeCycle" class="chip">🚲 Cycle</label>
+              <input type="radio" id="modeTwo" name="mode" value="Two-wheeler">
+              <label for="modeTwo" class="chip">🏍️ Two-wheeler</label>
+              <input type="radio" id="modeCar" name="mode" value="Car">
+              <label for="modeCar" class="chip">🚗 Car</label>
+              <input type="radio" id="modeBus" name="mode" value="Bus">
+              <label for="modeBus" class="chip">🚌 Bus</label>
+              <input type="radio" id="modeMetro" name="mode" value="Metro">
+              <label for="modeMetro" class="chip">🚇 Metro</label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="destination">Destination</label>
+            <input id="destination" name="destination" type="text" placeholder="e.g., Office, Trivandrum" required>
+            <div class="hint">Tip: Use saved places <button type="button" class="link" id="useRecentDestination">Recent</button></div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="companions">Accompanying travellers</label>
+              <input id="companions" name="companions" type="number" min="0" value="0">
+            </div>
+            <div>
+              <label for="purpose">Purpose</label>
+              <select id="purpose" name="purpose">
+                <option value="Work">Work</option>
+                <option value="Education">Education</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Health">Health</option>
+                <option value="Other" selected>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Anything to add..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-ghost" type="reset">Reset</button>
+            <button class="btn btn-primary" type="submit">Save Trip (Demo)</button>
+          </div>
+        </form>
+
+        <div class="card glass" style="margin-top:12px; padding:12px">
+          <div class="card-header">
+            <h3>Travel Feedback (Options)</h3>
+          </div>
+          <div class="form-grid">
+            <div class="form-row two">
+              <div>
+                <label for="fb_hospitals">Availability of hospitals on routes</label>
+                <select id="fb_hospitals" name="fb_hospitals">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+              <div>
+                <label for="fb_toilets">Availability of public toilets</label>
+                <select id="fb_toilets" name="fb_toilets">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="fb_toilet_clean">Cleanliness of public toilets</label>
+                <select id="fb_toilet_clean" name="fb_toilet_clean">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+              <div>
+                <label for="fb_roads">Road condition</label>
+                <select id="fb_roads" name="fb_roads">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="fb_sidewalks">Pedestrian infrastructure</label>
+                <select id="fb_sidewalks" name="fb_sidewalks">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+              <div>
+                <label for="fb_lighting">Street lighting</label>
+                <select id="fb_lighting" name="fb_lighting">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="fb_bus">Bus stop availability/condition</label>
+                <select id="fb_bus" name="fb_bus">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+              <div>
+                <label for="fb_safety">Safety and security</label>
+                <select id="fb_safety" name="fb_safety">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div>
+                <label for="fb_signage">Signage and wayfinding</label>
+                <select id="fb_signage" name="fb_signage">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+              <div>
+                <label for="fb_overall">Overall travel satisfaction</label>
+                <select id="fb_overall" name="fb_overall">
+                  <option>Very poor</option>
+                  <option>Poor</option>
+                  <option>Average</option>
+                  <option>Good</option>
+                  <option>Excellent</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="fb_notes">Suggestions or issues</label>
+              <textarea id="fb_notes" name="fb_notes" rows="3" placeholder="Your ideas..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass" id="tripListCard">
+          <div class="card-header">
+            <h3>Recent Trips (Local)</h3>
+            <button class="btn tiny" id="clearTrips">Clear</button>
+          </div>
+          <ul class="trip-list" id="tripList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>This is a frontend-only demo. Data is stored in your browser's local storage.</p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="trip.html">Capture Trip</a>
+          <a href="explore.html">Explore</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+

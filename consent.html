@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanshodhan – Consent & About</title>
+    <meta name="description" content="Consent, privacy, and about this demo. No backend involved.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="Logo.jpg">
+  </head>
+  <body data-page="consent">
+    <div class="page-transition" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="Logo.jpg" alt="NATPAC" class="brand-icon">
+        <span class="brand-name">Sanshodhan</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trip.html" class="nav-link">Capture Trip</a>
+        <a href="explore.html" class="nav-link">Explore</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <main>
+      <section class="page-header container">
+        <h1 class="animate-up">Consent & Privacy</h1>
+        <p class="lead animate-up delay-1">We believe in transparent data usage. Your trip data is processed with your consent and stored securely for transportation planning by authorized teams.</p>
+      </section>
+
+      <section class="container">
+        <div class="card glass" style="margin-bottom:12px">
+          <h3>Consent Statement</h3>
+          <p>By providing your trip details, you allow us to use anonymized information for transportation planning and research. You may revoke consent at any time.</p>
+          <ul class="checklist">
+            <li>Trip number, origin, destination, time, mode</li>
+            <li>Companions count and optional notes</li>
+            <li>Data handled per applicable privacy policies</li>
+            <li>Revocable consent and data deletion option</li>
+          </ul>
+          <div class="consent-actions">
+            <label class="switch">
+              <input type="checkbox" id="consentToggle">
+              <span class="slider"></span>
+            </label>
+            <span id="consentStatus">Consent: Not given</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><strong>Contact Us</strong></p>
+        <p>Email: <a href="mailto:team.sanshodhan@gmail.com">team.sanshodhan@gmail.com</a> · Phone: <a href="tel:+919999999999">+91 99999 99999</a></p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="trip.html">Capture Trip</a>
+          <a href="explore.html">Explore</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+

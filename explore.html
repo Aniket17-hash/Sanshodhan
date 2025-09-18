@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanshodhan – Explore</title>
+    <meta name="description" content="Live location tracking and nearby facilities demo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="Logo.jpg">
+  </head>
+  <body data-page="explore">
+    <div class="page-transition" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="Logo.jpg" alt="NATPAC" class="brand-icon">
+        <span class="brand-name">Sanshodhan</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trip.html" class="nav-link">Capture Trip</a>
+        <a href="explore.html" class="nav-link active">Explore</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <main>
+      <section class="page-header container">
+        <h1 class="animate-up">Explore Nearby</h1>
+        <p class="lead animate-up delay-1">Live location tracking and nearby facilities (demo with online/offline fallback).</p>
+      </section>
+
+      <section class="container">
+        <div class="card glass" style="margin-top:12px; padding:12px">
+          <div class="card-header">
+            <h3>Live Location</h3>
+            <div>
+              <button class="btn tiny" id="startLive">Start</button>
+              <button class="btn tiny" id="stopLive">Stop</button>
+            </div>
+          </div>
+          <div id="liveMap" style="height:300px; border-top:1px solid var(--border)"></div>
+          <div id="liveStatus" class="hint" style="padding:10px 14px">Waiting for location…</div>
+        </div>
+
+        <div class="card glass" style="margin-top:12px; padding:12px">
+          <div class="card-header">
+            <h3>Nearby Facilities</h3>
+            <div>
+              <select id="facilityType" class="tiny-select">
+                <option value="hospital">Hospital</option>
+                <option value="atm">ATM</option>
+                <option value="fuel">Fuel</option>
+                <option value="bus">Bus Stop</option>
+              </select>
+              <button class="btn tiny" id="findNearby">Find</button>
+            </div>
+          </div>
+          <ul class="trip-list" id="nearbyList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><strong>Contact Us</strong></p>
+        <p>Email: <a href="mailto:team.sanshodhan@gmail.com">team.sanshodhan@gmail.com</a> · Phone: <a href="tel:+919999999999">+91 99999 99999</a></p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="trip.html">Capture Trip</a>
+          <a href="explore.html">Explore</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+

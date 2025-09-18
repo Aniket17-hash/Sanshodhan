@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanshodhan – Smart Travel Capture</title>
+    <meta name="description" content="Beautiful demo for capturing trip chains: origin, time, mode, destination, companions, and consent.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="Logo.jpg">
+  </head>
+  <body data-page="home">
+    <div class="page-transition" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="Logo.jpg" alt="NATPAC" class="brand-icon">
+        <span class="brand-name">Sanshodhan</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="trip.html" class="nav-link">Capture Trip</a>
+        <a href="explore.html" class="nav-link">Explore</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+          <span class="orb orb-3"></span>
+        </div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 class="animate-up">Capture Real Trips. Plan Smarter Cities.</h1>
+            <p class="lead animate-up delay-1">A sleek mobile-first experience to log trip chains—origin, time, mode, destination, and companions—with delightful micro-interactions.</p>
+            <div class="cta animate-up delay-2">
+              <a href="trip.html" class="btn btn-primary">Start a Trip</a>
+              <a href="consent.html" class="btn btn-ghost">View Consent</a>
+            </div>
+            <ul class="stats animate-up delay-3">
+              <li>
+                <span class="stat"><span data-count>0</span>+</span>
+                <span class="label">Trips Captured (demo)</span>
+              </li>
+              <li>
+                <span class="stat"><span data-count>0</span> s</span>
+                <span class="label">Avg. entry time</span>
+              </li>
+              <li>
+                <span class="stat">100%</span>
+                <span class="label">Privacy-first</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-visual animate-float">
+            <div class="phone">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="screen-top">
+                  <div class="signal"></div>
+                  <div class="time" id="mockTime">09:41</div>
+                  <div class="battery"></div>
+                </div>
+                <div class="screen-content">
+                  <div class="mock-card shimmer">
+                    <div class="pill">New Trip</div>
+                    <div class="lines"></div>
+                    <div class="lines short"></div>
+                    <div class="chip pulse">Auto-detect</div>
+                  </div>
+                  <div class="mock-map">
+                    <div class="dot dot-a"></div>
+                    <div class="dot dot-b"></div>
+                    <div class="path"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features container">
+        <h2 class="section-title">Designed for effortless data collection</h2>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="icon gradient">🧭</div>
+            <h3>Smart Origin/Destination</h3>
+            <p>Detects current time and nudges location, with quick-edit fields.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon gradient">⛓️</div>
+            <h3>Trip Chain Ready</h3>
+            <p>Capture linked legs to build a complete activity chain per user.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon gradient">🔒</div>
+            <h3>Consent & Privacy</h3>
+            <p>Clear, revocable consent flows with transparent local demo storage.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon gradient">✨</div>
+            <h3>Delightful UX</h3>
+            <p>Glassmorphism, smooth transitions, and tactile micro-interactions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-wide">
+        <div class="container">
+          <div class="cta-box">
+            <h3>Ready to log your first trip?</h3>
+            <a href="trip.html" class="btn btn-primary btn-lg">Open Trip Capture</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><strong>Contact Us</strong></p>
+        <p>Email: <a href="mailto:team.sanshodhan@gmail.com">team.sanshodhan@gmail.com</a> · Phone: <a href="tel:+919999999999">+91 99999 99999</a></p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="trip.html">Capture Trip</a>
+          <a href="explore.html">Explore</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+
